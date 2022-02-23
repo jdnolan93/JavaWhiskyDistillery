@@ -4,6 +4,7 @@ import com.codeclan.example.WhiskyTracker.models.Distillery;
 
 import com.codeclan.example.WhiskyTracker.repositories.DistilleryRepository;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ public class DistilleryController {
     DistilleryRepository distilleryRepository;
 
     @GetMapping(value = "/distilleries")
+
     public ResponseEntity<List<Distillery>> getAllDistilleries(){
         return new ResponseEntity<>(distilleryRepository.findAll(), HttpStatus.OK);
     }
